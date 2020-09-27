@@ -57,13 +57,11 @@ class Student
   
   def self.find_by_name(name_var)
     sql =  <<-SQL
-      CREATE TABLE IF NOT EXISTS students (
-      id INTEGER PRIMARY KEY,
-      name TEXT,
-      grade INTEGER
-      )
-      SQL
-    DB[:conn].execute(sql)
+    SELECT *
+    FROM students
+    WHERE name = ?
+    SQL
+    DB[:conn].execute(sql,name_var)
   end
 
 end
