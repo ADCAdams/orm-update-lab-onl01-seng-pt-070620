@@ -59,6 +59,8 @@ class Student
     id = row[0]
     name = row[1]
     grade = row[2]
+    puts name
+    puts grade
     self.new(id, name, grade)
   end
   
