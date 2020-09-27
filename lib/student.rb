@@ -62,8 +62,9 @@ class Student
     WHERE name = ?
     SQL
     result = DB[:conn].execute(sql,name_var)
+    puts result
     found_student = Student.new(result[0], result[1], result[2])
-    found_student
+    puts found_student
   end
 
 end
