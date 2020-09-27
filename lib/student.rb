@@ -61,7 +61,8 @@ class Student
     FROM students
     WHERE name = ?
     SQL
-    DB[:conn].execute(sql,name_var)
+    result = DB[:conn].execute(sql,name_var)
+    Student.new(result[0])
   end
 
 end
